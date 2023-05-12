@@ -1,0 +1,25 @@
+<app-header></app-header>
+<div class="register-container">
+  <h3>Cadastro de Colaboradores</h3>
+  <form class="register-form" [formGroup]="newUserForm">
+
+    <div class="form-field">
+      <label class="label-input">Nome:</label>
+      <input type="text" placeholder="Nome" formControlName="name">
+    </div>
+
+    <div class="form-field">
+      <label class="label-input">Email:</label>
+      <input type="text" placeholder="Email" formControlName="email">
+    </div>
+
+    <div class="form-field">
+      <label class="label-input">Email:</label>
+      <input type="password" placeholder="Senha" formControlName="password">
+    </div>
+
+    <div class="action-form">
+      <button class="cadastrarProduto" type="submit" (click)="onSubmit()" [disabled]="newUserForm.invalid === true">Salvar</button>
+    </div>
+  </form>
+</div>

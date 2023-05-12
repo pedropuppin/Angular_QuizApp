@@ -20,7 +20,7 @@
         </div>
       </div>
       <p class="error" *ngIf="error">Usuário ou senha inválidos, tente novamente!</p>
-      <a href="#">Ainda não tem uma conta? Clique aqui!</a>
+      <a (click)="navigateByUrl('new-user')">Ainda não tem uma conta? Clique aqui!</a>
       <button class="btn" type="button" (click)="authenticate()">Entrar</button>
     </form>
   </div>

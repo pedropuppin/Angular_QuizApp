@@ -24,4 +24,14 @@ export class UsersService {
   getUserByEmailAndPassword(email: string, password: string) {
     return this.users.find(user => user.email === email && user.password === password);
   }
+
+  create(user: Partial<User>) {
+    user.id = this.generateNextId();
+    this.users.push(user as User);
+    //return this.http.post<Colaborator>(this.baseURL + '/colaborators/create/', colaborator, this.options); // passamos a rota e o objeto que queremos criar (colaborator)
+  }
+
+  generateNextId() {
+    return this.users[(this.users.length - 1)].id + 1;
+  }
 }

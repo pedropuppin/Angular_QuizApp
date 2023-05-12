@@ -27,4 +27,8 @@ export class LoginPageComponent {
       this.error = true;
     }
   }
+
+  navigateByUrl(url: string) {
+    this.router.navigateByUrl(url);
+  }
 }
