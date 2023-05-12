@@ -1,16 +1,27 @@
 <app-header></app-header>
-<div class="login-container">
-  <h3>Bem vindo! Digite seu usuário/senha para acessar o sistema!</h3>
-  <form class="login-form">
-    <div class="form-field">
-      <input type="email" [(ngModel)]="email" placeholder="Digite o Email" name="email" required>
-      <!-- ngModel permite guardar o valor do input na variável criada no "login-page.component.ts" -->
-    </div>
-    <div class="form-field">
-      <input type="password" [(ngModel)]="password" placeholder="Digite a senha" name="password" required>
-    </div>
-    <p class="error" *ngIf="error">Usuário/senha inválidos, tente novamente!</p>
-  </form>
-  <!-- event bind que chama a função authenticate -->
-  <button class="primary-button" type="button" (click)="authenticate()">Entrar</button>
+<div class="container">
+  <div class="login-content">
+    <form class="login-form">
+      <h2>Bem vindo!</h2>
+      <div class="form-field one">
+        <div>
+          <mat-icon>person</mat-icon>
+        </div>
+        <div class="field">
+          <h5>Usuário</h5>
+          <input type="email" [(ngModel)]="email" name="email" required>
+        </div>
+      </div>
+      <div class="form-field pass">
+        <mat-icon>lock</mat-icon>
+        <div class="field">
+          <h5>Senha</h5>
+          <input type="password" [(ngModel)]="password" name="password" required>
+        </div>
+      </div>
+      <p class="error" *ngIf="error">Usuário ou senha inválidos, tente novamente!</p>
+      <a href="#">Ainda não tem uma conta? Clique aqui!</a>
+      <button class="btn" type="button" (click)="authenticate()">Entrar</button>
+    </form>
+  </div>
 </div>
