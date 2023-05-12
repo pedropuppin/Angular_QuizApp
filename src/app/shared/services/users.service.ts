@@ -25,7 +25,7 @@ export class UsersService {
     return this.users.find(user => user.email === email && user.password === password);
   }
 
-  create(user: Partial<User>) {
+  create(user: User) {
     user.id = this.generateNextId();
     this.users.push(user as User);
     //return this.http.post<Colaborator>(this.baseURL + '/colaborators/create/', colaborator, this.options); // passamos a rota e o objeto que queremos criar (colaborator)

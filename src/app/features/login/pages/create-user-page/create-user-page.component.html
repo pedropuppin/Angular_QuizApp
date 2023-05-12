@@ -1,25 +1,29 @@
 <app-header></app-header>
-<div class="register-container">
-  <h3>Cadastro de Colaboradores</h3>
-  <form class="register-form" [formGroup]="newUserForm">
 
-    <div class="form-field">
-      <label class="label-input">Nome:</label>
-      <input type="text" placeholder="Nome" formControlName="name">
-    </div>
+<div class="container">
+  <div class="new-user-content">
+    <form class="register-form" [formGroup]="newUserForm">
+      <h2>Cadastro</h2>
+      <div class="form-field">
+        <label class="label-input">Nome:</label>
+        <input type="text" placeholder="Nome" formControlName="name">
+      </div>
 
-    <div class="form-field">
-      <label class="label-input">Email:</label>
-      <input type="text" placeholder="Email" formControlName="email">
-    </div>
+      <div class="form-field">
+        <label class="label-input">Email:</label>
+        <input type="text" placeholder="Email" formControlName="email">
+      </div>
 
-    <div class="form-field">
-      <label class="label-input">Email:</label>
-      <input type="password" placeholder="Senha" formControlName="password">
-    </div>
+      <div class="form-field">
+        <label class="label-input">Email:</label>
+        <input type="password" placeholder="******" formControlName="password">
+        <span class="error" *ngIf="newUserForm.controls.password.errors">
+          A senha deve conter no mínimo 6 caracteres</span>
+      </div>
 
-    <div class="action-form">
-      <button class="cadastrarProduto" type="submit" (click)="onSubmit()" [disabled]="newUserForm.invalid === true">Salvar</button>
-    </div>
-  </form>
+      <div class="action-form">
+        <button class="cadastrarProduto" type="submit" (click)="onSubmit()" [disabled]="newUserForm.invalid === true">Salvar</button>
+      </div>
+    </form>
+  </div>
 </div>

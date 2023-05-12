@@ -15,19 +15,15 @@ export class CreateUserPageComponent {
   ) { }
 
   newUserForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
+    name: new FormControl<string | null>('', [Validators.required]),
+    email: new FormControl<string | null>('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   })
 
   onSubmit() {
     const formValue: any = this.newUserForm.value // pega o valor do formulário e guarda na variável formValue
-    this.router.navigateByUrl('categories')
     console.log(formValue);
-    // this.usersService.create(formValue).subscribe((response) => {
-      //   this.router.navigateByUrl('categories')
-    // })
+    this.usersService.create(formValue);
+    this.router.navigateByUrl('categories')
   }
 }
-
-
