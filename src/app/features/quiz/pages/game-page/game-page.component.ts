@@ -26,18 +26,3 @@ export class GamePageComponent {
     .subscribe(category => this.category = category);
   }
 }
-
-
-// this.activatedRoute
-// .params // é um observable que emite os parâmetros da rota ativa
-// .pipe(
-//   map(params => params.id), // transforma os parâmetros da rota em um observable que emite o id do 'todo'
-//   switchMap(todoId => this.todosFacade.getTodoById(todoId)) // toda vez que chegar um novo id, vamos fazer a requisição pro facadeService
-// )
-// .subscribe(todoState => this.todoState = todoState);
-
-// subscribe((params) => {
-//   const categoryId = parseInt(params['id']);
-//   this.questionsApi.getCategoryById(categoryId).subscribe((category) => {
-//     this.category = category;
-//   });
