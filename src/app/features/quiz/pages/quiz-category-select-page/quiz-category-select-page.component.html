@@ -1,2 +1,6 @@
-<app-header></app-header>
-<p>quiz-category-select-page works!</p>
+<h1>Selecione uma categoria:</h1>
+<ul>
+  <li *ngFor="let category of categories">
+    <button [routerLink]="['/categories', category.id]">{{ category.name}}</button>
+  </li>
+</ul>

@@ -1,0 +1,155 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Angular",
+      "questions": [
+        {
+          "id": 1,
+          "question": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "answers": [
+            {
+              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
+            },
+            {
+              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "isCorrect": true
+            },
+            {
+              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
+            },
+            {
+              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "question": "Qual é a diferença entre paramMap e queryParamMap na classe ActivatedRoute?",
+          "answers": [
+            {
+              "answer": "O paramMap é um Observable que contém os valores dos parâmetros que fazem parte do caminho da URL da rota. O queryParamMap é um método que recebe um array de chaves e é usado para encontrar parâmetros específicos no paramMap."
+            },
+            {
+              "answer": "Ambos são Observables que contêm valores da string da URL da rota solicitada. O paramMap contém os valores dos parâmetros presentes no caminho da URL, enquanto o queryParamMap contém os parâmetros de consulta da URL",
+              "isCorrect": true
+            },
+            {
+              "answer": "paramMap é o nome antigo usado no Angular 3. O novo nome é queryParamMap."
+            },
+            {
+              "answer": "O paramMap é um objeto literal dos parâmetros presentes no caminho da URL da rota. O queryParamMap é um Observable desses mesmos parâmetros."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "question": "Para que serve o método RouterModule.forRoot?",
+          "answers": [
+            {
+              "answer": "Registrar quaisquer provedores que você pretende usar nos componentes roteados."
+            },
+            {
+              "answer": "Registrar definições de rotas no nível raiz da aplicação.",
+              "isCorrect": true
+            },
+            {
+              "answer": "Indicar que o Angular deve incentivar suas rotas a terem sucesso."
+            },
+            {
+              "answer": "Declarar que você pretende usar o roteamento apenas no nível raiz."
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "question": "Quais são as duas propriedades de metadados do decorador de componente usadas para configurar estilos CSS para um componente?",
+          "answers": [
+            {
+              "answer": "viewEncapsulation e viewEncapsulationFiles."
+            },
+            {
+              "answer": "styles e styleUrls.",
+              "isCorrect": true
+            },
+            {
+              "answer": "Existe apenas uma propriedade e é chamada de css."
+            },
+            {
+              "answer": "css e cssUrl."
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "question": "Qual diretiva é usada para vincular uma tag <a> à navegação por rotas?",
+          "answers": [
+            {
+              "answer": "routeTo"
+            },
+            {
+              "answer": "routerLink",
+              "isCorrect": true
+            },
+            {
+              "answer": "routePath"
+            },
+            {
+              "answer": "appLink"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "TypeScript",
+      "questions": [
+        {
+          "question": "O TypeScript é uma linguagem de programação baseada em qual linguagem?",
+          "answers": [
+            {
+              "id": 1,
+              "answer": "JavaScript",
+              "isCorrect": true
+            },
+            {
+              "answer": "Python"
+            },
+            {
+              "answer": "Java"
+            },
+            {
+              "answer": "C#"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "RxJS",
+      "questions": [
+        {
+          "id": 1,
+          "question": "O que significa RxJS?",
+          "answers": [
+            {
+              "answer": "Reactive Extensions for JavaScript",
+              "isCorrect": true
+            },
+            {
+              "answer": "Random Extensions for JavaScript"
+            },
+            {
+              "answer": "Real-time Extensions for JavaScript"
+            },
+            {
+              "answer": "Regular Expressions for JavaScript"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
