@@ -1,21 +1,21 @@
 export interface Category {
   id: number;
   name: string;
-  questions: Questions[];
+  questions: Question[];
 }
 
-export interface Questions {
+export interface Question {
   id: number;
-  question: string;
-  answers: Answers[];
+  questionText: string;
+  answers: Answer[];
 }
 
-export interface Answers {
+export interface Answer {
   answer: string;
   isCorrect?: boolean;
 }
 
 export interface QuestionsState {
   loading: boolean;
-  questions: Questions | null;
+  questions: Question | null;
 }

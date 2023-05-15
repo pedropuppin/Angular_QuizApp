@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Questions } from 'src/app/shared/types/category.model';
+import { Question } from 'src/app/shared/types/category.model';
 
 export interface CategoryState {
   loaded: boolean;
   loading: boolean;
-  questions: Questions[];
+  questions: Question[];
 }
 
 @Injectable({
@@ -24,7 +24,7 @@ export class QuestionsStateService {
     return this.state$.asObservable();
   }
 
-  setQuestions(questions: Questions[]) {
+  setQuestions(questions: Question[]) {
     this.state$.next({
       ...this.state$.getValue(),
       questions: questions

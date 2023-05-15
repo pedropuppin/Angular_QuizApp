@@ -1,2 +1,11 @@
-<p>quiz-game-board works!</p>
-<app-question-and-answers></app-question-and-answers>
+<h1>pergunta:</h1>
+<app-question *ngIf="question" [question]="question"></app-question>
+
+<br>
+
+<h2>respostas:</h2>
+<ul *ngIf="answers">
+  <li *ngFor="let answer of answers">
+    <app-answer [answer]="answer"></app-answer>
+  </li>
+</ul>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap } from 'rxjs';
 import { QuestionsApiService } from 'src/app/shared/services/core/async/questions-api.service';
-import { Category } from 'src/app/shared/types/category.model';
+import { Category, Question } from 'src/app/shared/types/category.model';
 
 @Component({
   templateUrl: './game-page.component.html',
@@ -23,6 +23,10 @@ export class GamePageComponent {
       map(params => parseInt(params['id'])),
       switchMap(categoryId => this.questionsApi.getCategoryById(categoryId))
     )
-    .subscribe(category => this.category = category);
+    .subscribe(category => {
+      this.category = category
+      console.log(this.category.questions);
+      console.log(this.category.questions[0].answers);
+    });
   }
 }

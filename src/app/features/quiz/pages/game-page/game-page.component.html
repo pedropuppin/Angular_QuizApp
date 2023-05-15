@@ -1,5 +1,5 @@
 <p>game-page works!</p>
 <div class="test" *ngIf="category">
   <h1>{{category.name}}</h1>
+  <app-quiz-game-board [question]="category.questions[0]" [answers]="category.questions[0].answers"></app-quiz-game-board>
 </div>
-<app-quiz-game-board></app-quiz-game-board>
