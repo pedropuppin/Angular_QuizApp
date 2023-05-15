@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Category, Questions } from 'src/app/shared/types/category.model';
 
 @Component({
   selector: 'app-question-and-answers',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class QuestionAndAnswersComponent {
 
+  @Input()
+  questions!: Category[];
+
+  ngOnInit() {
+    console.log(this.questions);
+  }
 }

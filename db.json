@@ -6,7 +6,7 @@
       "questions": [
         {
           "id": 1,
-          "question": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
           "answers": [
             {
               "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
@@ -25,7 +25,7 @@
         },
         {
           "id": 2,
-          "question": "Qual é a diferença entre paramMap e queryParamMap na classe ActivatedRoute?",
+          "questionText": "Qual é a diferença entre paramMap e queryParamMap na classe ActivatedRoute?",
           "answers": [
             {
               "answer": "O paramMap é um Observable que contém os valores dos parâmetros que fazem parte do caminho da URL da rota. O queryParamMap é um método que recebe um array de chaves e é usado para encontrar parâmetros específicos no paramMap."
@@ -44,7 +44,7 @@
         },
         {
           "id": 3,
-          "question": "Para que serve o método RouterModule.forRoot?",
+          "questionText": "Para que serve o método RouterModule.forRoot?",
           "answers": [
             {
               "answer": "Registrar quaisquer provedores que você pretende usar nos componentes roteados."
@@ -63,7 +63,7 @@
         },
         {
           "id": 4,
-          "question": "Quais são as duas propriedades de metadados do decorador de componente usadas para configurar estilos CSS para um componente?",
+          "questionText": "Quais são as duas propriedades de metadados do decorador de componente usadas para configurar estilos CSS para um componente?",
           "answers": [
             {
               "answer": "viewEncapsulation e viewEncapsulationFiles."
@@ -82,7 +82,7 @@
         },
         {
           "id": 5,
-          "question": "Qual diretiva é usada para vincular uma tag <a> à navegação por rotas?",
+          "questionText": "Qual diretiva é usada para vincular uma tag <a> à navegação por rotas?",
           "answers": [
             {
               "answer": "routeTo"
@@ -106,7 +106,7 @@
       "name": "TypeScript",
       "questions": [
         {
-          "question": "O TypeScript é uma linguagem de programação baseada em qual linguagem?",
+          "questionText": "O TypeScript é uma linguagem de programação baseada em qual linguagem?",
           "answers": [
             {
               "id": 1,
@@ -132,7 +132,7 @@
       "questions": [
         {
           "id": 1,
-          "question": "O que significa RxJS?",
+          "questionText": "O que significa RxJS?",
           "answers": [
             {
               "answer": "Reactive Extensions for JavaScript",
