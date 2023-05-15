@@ -1,3 +1,20 @@
 <app-header></app-header>
-<p>home-page works!</p>
+<div class="app-info">
+  <h1>Bem vindo!</h1>
+  <p>
+    MJV Academy quiz app. Projeto feito em Angular para colocar em prática os conhecimentos
+    adquiridos no curso de Angular da MJV Technology & Innovation.
+  </p>
+  <button *ngIf="!user" (click)="navigateByUrl('login')">Entrar</button>
+  <button *ngIf="user" (click)="navigateByUrl('categories')">Jogar!</button>
+</div>
+<div class="rules">
+  <h4>Regras:</h4>
+  <ol>
+    <li>Questões corretas dão 10 pontos</li>
+    <li>Questões erradas reduzem 10 pontos</li>
+    <li>Você tem 60 segundos para responder cada questão</li>
+    <li>Refereshing the page will reset the Quiz</li>
+  </ol>
+</div>
 <app-footer></app-footer>
