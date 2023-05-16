@@ -1,5 +1,59 @@
-<p>game-page works!</p>
-<div class="test" *ngIf="category">
-  <h1>{{category.name}}</h1>
-  <app-quiz-game-board [question]="category.questions[0]" [answers]="category.questions[0].answers"></app-quiz-game-board>
+<div class="game-page" *ngIf="category">
+
+  <ng-container *ngIf="!isQuizCompleted">
+    <h1>{{category.name}}</h1>
+    <div class="game-info">
+
+      <div class="score">
+        <h5>{{points}} Pontos</h5>
+      </div>
+
+      <div class="remaining-questions">
+        <span *ngIf="randomQuestions">Questão {{currentIndex + 1}} de {{randomQuestions.length}}</span>
+      </div>
+
+      <div class="timer">
+        <h5><mat-icon>schedule</mat-icon> {{counter}} segundos restantes</h5>
+      </div>
+
+      <mat-progress-bar mode="determinate" [value]= "progressBar" color="accent"></mat-progress-bar>
+    </div>
+
+    <div class="game-board">
+      <app-quiz-game-board
+        *ngIf="randomQuestions"
+        (answerSelected)="onSelectedChanged($event)"
+        [question]="randomQuestions[currentIndex]"
+        [answers]="randomQuestions[currentIndex].answers">
+      </app-quiz-game-board>
+    </div>
+
+    <div class="navigate">
+      <button (click)="previousQuestion()" [disabled]="currentIndex === 0">
+        <mat-icon>arrow_back_ios</mat-icon>
+      </button>
+      <button (click)="exit()">
+        <mat-icon>close</mat-icon>
+      </button>
+      <button (click)="nextQuestion()">
+        <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="randomQuestions && isQuizCompleted">
+    <div class="final-card">
+      <div class="results">
+        <h3>Parabéns! Você completou o quiz! <br> Seus resultados foram:</h3>
+        <p>Total de questões: {{randomQuestions.length}}</p>
+        <p>Total de respostas corretas: {{correctAnswer}}</p>
+        <p>Total de respostas erradas: {{wrongAnswer}}</p>
+        <p>Pontuação final: {{points}} pontos</p>
+      </div>
+      <div class="navigation">
+        <button (click)="exit()">Categorias</button>
+        <button (click)="restartQuiz()">Jogar novamente!</button>
+      </div>
+    </div>
+  </ng-container>
 </div>

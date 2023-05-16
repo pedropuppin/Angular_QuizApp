@@ -106,21 +106,97 @@
       "name": "TypeScript",
       "questions": [
         {
-          "questionText": "O TypeScript é uma linguagem de programação baseada em qual linguagem?",
+          "id": 1,
+          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
           "answers": [
             {
-              "id": 1,
-              "answer": "JavaScript",
+              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
+            },
+            {
+              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
               "isCorrect": true
             },
             {
-              "answer": "Python"
+              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
             },
             {
-              "answer": "Java"
+              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "answers": [
+            {
+              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
             },
             {
-              "answer": "C#"
+              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "isCorrect": true
+            },
+            {
+              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
+            },
+            {
+              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "answers": [
+            {
+              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
+            },
+            {
+              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "isCorrect": true
+            },
+            {
+              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
+            },
+            {
+              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "answers": [
+            {
+              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
+            },
+            {
+              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "isCorrect": true
+            },
+            {
+              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
+            },
+            {
+              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "answers": [
+            {
+              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
+            },
+            {
+              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "isCorrect": true
+            },
+            {
+              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
+            },
+            {
+              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
             }
           ]
         }
@@ -132,6 +208,82 @@
       "questions": [
         {
           "id": 1,
+          "questionText": "O que significa RxJS?",
+          "answers": [
+            {
+              "answer": "Reactive Extensions for JavaScript",
+              "isCorrect": true
+            },
+            {
+              "answer": "Random Extensions for JavaScript"
+            },
+            {
+              "answer": "Real-time Extensions for JavaScript"
+            },
+            {
+              "answer": "Regular Expressions for JavaScript"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "questionText": "O que significa RxJS?",
+          "answers": [
+            {
+              "answer": "Reactive Extensions for JavaScript",
+              "isCorrect": true
+            },
+            {
+              "answer": "Random Extensions for JavaScript"
+            },
+            {
+              "answer": "Real-time Extensions for JavaScript"
+            },
+            {
+              "answer": "Regular Expressions for JavaScript"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "questionText": "O que significa RxJS?",
+          "answers": [
+            {
+              "answer": "Reactive Extensions for JavaScript",
+              "isCorrect": true
+            },
+            {
+              "answer": "Random Extensions for JavaScript"
+            },
+            {
+              "answer": "Real-time Extensions for JavaScript"
+            },
+            {
+              "answer": "Regular Expressions for JavaScript"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "questionText": "O que significa RxJS?",
+          "answers": [
+            {
+              "answer": "Reactive Extensions for JavaScript",
+              "isCorrect": true
+            },
+            {
+              "answer": "Random Extensions for JavaScript"
+            },
+            {
+              "answer": "Real-time Extensions for JavaScript"
+            },
+            {
+              "answer": "Regular Expressions for JavaScript"
+            }
+          ]
+        },
+        {
+          "id": 5,
           "questionText": "O que significa RxJS?",
           "answers": [
             {

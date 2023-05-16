@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import { ChangeBgDirective } from './directives/change-bg.directive';
 
 
 
@@ -12,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 export const sharedComponents = [
   HeaderComponent,
   FooterComponent,
+  ChangeBgDirective,
 ]
 
 export const sharedModules = [
@@ -23,7 +25,7 @@ export const sharedModules = [
 
 @NgModule({
   declarations: [
-    ...sharedComponents
+    ...sharedComponents,
   ],
   imports: [
     ...sharedModules

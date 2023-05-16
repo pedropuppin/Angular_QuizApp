@@ -1,11 +1,16 @@
-<h1>pergunta:</h1>
-<app-question *ngIf="question" [question]="question"></app-question>
+<div class="game-board">
+  <div class="question">
+    <app-question *ngIf="question" [question]="question"></app-question>
+  </div>
 
-<br>
-
-<h2>respostas:</h2>
-<ul *ngIf="answers">
-  <li *ngFor="let answer of answers">
-    <app-answer [answer]="answer"></app-answer>
-  </li>
-</ul>
+  <div class="options">
+    <ul *ngIf="answers">
+      <li *ngFor="let answer of answers">
+        <app-answer
+          [answer]="answer"
+          (selected)="onTodoSelected($event)">
+        </app-answer>
+      </li>
+    </ul>
+  </div>
+</div>

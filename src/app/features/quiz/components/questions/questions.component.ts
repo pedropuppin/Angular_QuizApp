@@ -9,9 +9,4 @@ import { Question } from 'src/app/shared/types/category.model';
 export class QuestionComponent {
   @Input()
   question!: Question;
-
-  ngOnInit() {
-    console.log(this.question);
-    
-  }
 }

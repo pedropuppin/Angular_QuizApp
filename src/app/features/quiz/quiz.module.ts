@@ -7,6 +7,10 @@ import { QuizGameBoardComponent } from './components/quiz-game-board/quiz-game-b
 import { GamePageComponent } from './pages/game-page/game-page.component';
 import { QuestionComponent } from './components/questions/questions.component';
 import { AnswerComponent } from './components/answer/answer.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ChangeBgDirective } from 'src/app/shared/directives/change-bg.directive';
 
 
 @NgModule({
@@ -21,6 +25,9 @@ import { AnswerComponent } from './components/answer/answer.component';
     CommonModule,
     QuizRoutingModule,
     SharedModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatProgressBarModule,
   ]
 })
 export class QuizModule { }

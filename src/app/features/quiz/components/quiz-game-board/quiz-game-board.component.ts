@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { Answer, Question } from 'src/app/shared/types/category.model';
 
 @Component({
@@ -12,4 +12,11 @@ export class QuizGameBoardComponent {
 
   @Input()
   answers!: Answer[];
+
+  @Output()
+  answerSelected = new EventEmitter<Answer>();
+
+  onTodoSelected(answer: Answer) {
+    this.answerSelected.emit(answer);
+  }
 }
