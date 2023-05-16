@@ -1,29 +1,37 @@
 <app-header></app-header>
 
-<div class="container">
-  <div class="new-user-content">
+<div class="create-area">
+  <div class="create">
+    <h1>Preenha as informações</h1>
     <form class="register-form" [formGroup]="newUserForm">
-      <h2>Cadastro</h2>
-      <div class="form-field">
-        <label class="label-input">Nome:</label>
-        <input type="text" placeholder="Nome" formControlName="name">
+      <div class="full-name">
+        <mat-form-field appearance="fill" [color]="colorControl.value!">
+          <mat-label>Nome</mat-label>
+          <input matInput type="text" placeholder="Nome" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" [color]="colorControl.value!">
+          <mat-label>Sobrenome</mat-label>
+          <input matInput type="text" placeholder="Nome" formControlName="surname">
+          <mat-icon matSuffix>badge</mat-icon>
+        </mat-form-field>
       </div>
 
-      <div class="form-field">
-        <label class="label-input">Email:</label>
-        <input type="text" placeholder="Email" formControlName="email">
-      </div>
+      <mat-form-field appearance="fill" [color]="colorControl.value!">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="ex: test@gmail.com" formControlName="email">
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
 
-      <div class="form-field">
-        <label class="label-input">Email:</label>
-        <input type="password" placeholder="******" formControlName="password">
-        <span class="error" *ngIf="newUserForm.controls.password.errors">
-          A senha deve conter no mínimo 6 caracteres</span>
-      </div>
+      <mat-form-field appearance="fill" [color]="colorControl.value!">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Esconder senha'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
 
-      <div class="action-form">
-        <button class="cadastrarProduto" type="submit" (click)="onSubmit()" [disabled]="newUserForm.invalid === true">Salvar</button>
-      </div>
+      <button mat-raised-button color="accent" type="submit" (click)="onSubmit()" [disabled]="newUserForm.invalid === true">Salvar</button>
     </form>
   </div>
 </div>

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/shared/services/users.service';
+import { UsersApiService } from 'src/app/shared/services/core/async/users-api.service';
+
 
 @Component({
   templateUrl: './create-user-page.component.html',
@@ -11,19 +13,23 @@ export class CreateUserPageComponent {
 
   constructor(
     private router: Router,
-    private usersService: UsersService
+    private usersService: UsersApiService,
   ) { }
+
+  hide = true;
+  colorControl = new FormControl('accent' as ThemePalette);
 
   newUserForm = new FormGroup({
     name: new FormControl<string | null>('', [Validators.required]),
+    surname: new FormControl<string | null>('', [Validators.required]),
     email: new FormControl<string | null>('', [Validators.required]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-  })
+  });
 
   onSubmit() {
-    const formValue: any = this.newUserForm.value // pega o valor do formulário e guarda na variável formValue
+    const formValue: any = this.newUserForm.value
     console.log(formValue);
-    this.usersService.create(formValue);
+    this.usersService.createUser(formValue);
     this.router.navigateByUrl('categories')
   }
 }

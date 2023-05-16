@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/shared/services/users.service';
+import { UsersApiService } from 'src/app/shared/services/core/async/users-api.service';
 
 @Component({
   templateUrl: './login-page.component.html',
@@ -9,23 +11,35 @@ import { UsersService } from 'src/app/shared/services/users.service';
 export class LoginPageComponent {
 
   constructor (
-    private userServices: UsersService,
+    private userService: UsersApiService,
     private router: Router,
   ) {}
 
+  colorControl = new FormControl('accent' as ThemePalette)
+  hide = true;
   email: string = ""
   password: string = ""
   error = false
 
-  authenticate () {
-    const user = this.userServices.getUserByEmailAndPassword(this.email, this.password)
-    if(user) {
-      sessionStorage.setItem('user', JSON.stringify(user))
-      this.router.navigateByUrl('home');
-      // console.log(user)
-    } else {
-      this.error = true;
-    }
+  authenticate() {
+    this.userService.authenticate(this.email, this.password)
+      .subscribe(
+        response => {
+          if (response && response.length > 0) {
+            const user = JSON.parse(JSON.stringify(response[0]));
+            sessionStorage.setItem('user', JSON.stringify(user));
+            this.router.navigateByUrl('home');
+            console.log('Autenticação bem-sucedida:', response);
+          } else {
+            this.error = true;
+            console.error('Falha na autenticação: Usuário não encontrado');
+          }
+        },
+        error => {
+          console.error('Falha na autenticação:', error);
+          this.router.navigateByUrl('login');
+        }
+      );
   }
 
   navigateByUrl(url: string) {

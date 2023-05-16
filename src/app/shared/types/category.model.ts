@@ -1,6 +1,7 @@
 export interface Category {
   id: number;
   name: string;
+  imagePath: string;
   questions: Question[];
 }
 

@@ -1,151 +1,63 @@
-.container {
-  width: 100vw;
+.area-login {
+  display: flex;
   height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap :7rem;
-  padding: 0 2rem;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
 
-  .login-content {
+  .login {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    padding: 35px;
+    background-color: #181a20;
+    align-items: center;
+    height: 50%;
+    width: 30%;
+    border-radius: 20px;
+    border: 1px solid #adffe4;
 
-    form{
-      width: 360px;
-    }
-
-    h2 {
-      margin: 15px 0;
-      color: #333;
+    h1 {
+      color: whitesmoke;
       text-transform: uppercase;
-      font-size: 2.9rem;
-    }
-
-    .form-field {
-      position: relative;
-      display: grid;
-      grid-template-columns: 7% 93%;
-      margin: 25px 0;
-      padding: 5px 0;
-      border-bottom: 2px solid #d9d9d9;
-    }
-
-    .form-field.one{
-      margin-top: 0;
-    }
-
-    mat-icon {
-      color: #d9d9d9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .form-field > div {
-      position: relative;
-      height: 45px;
-    }
-
-    .form-field > div > h5{
-      position: absolute;
-      left: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #999;
-      font-size: 18px;
-      transition: .3s;
-    }
-
-    .form-field:before, .form-field:after{
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      width: 0%;
-      height: 2px;
-      background-color: #38d39f;
-      transition: .4s;
-    }
-
-    .form-field:before{
-      right: 50%;
-    }
-
-    .form-field:after{
-      left: 50%;
-    }
-
-    .form-field.focus:before, .form-field.focus:after{
-      width: 50%;
-    }
-
-    .form-field.focus > div > h5{
-      top: -5px;
-      font-size: 15px;
-    }
-
-    .form-field.focus > .i > i{
-      color: #38d39f;
-    }
-
-    .form-field > div > input{
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      outline: none;
-      background: none;
-      padding: 0.5rem 0.7rem;
-      font-size: 1.2rem;
-      color: #555;
-      font-family: 'poppins', sans-serif;
-    }
-
-    .form-field.pass{
-      margin-bottom: 4px;
-    }
-
-    a{
-      display: block;
-      text-align: right;
-      text-decoration: none;
-      color: #999;
-      font-size: 0.9rem;
-      transition: .3s;
-    }
-
-    a:hover{
-      color: #38d39f;
-    }
-
-    .btn{
-      display: block;
-      width: 100%;
-      height: 50px;
-      border-radius: 25px;
-      outline: none;
-      border: none;
-      background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
-      background-size: 200%;
-      font-size: 1.2rem;
-      color: #fff;
+      font-size: 50px;
+      height: auto;
+      text-align: center;
       font-family: 'Poppins', sans-serif;
-      text-transform: uppercase;
-      margin: 1rem 0;
-      cursor: pointer;
-      transition: .5s;
     }
 
-    .btn:hover{
-      background-position: right;
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      mat-form-field {
+        margin-top: 15px;
+
+        mat-icon {
+          color: whitesmoke;
+        }
+      }
+
+      button {
+        margin-top: 10px;
+      }
     }
 
-    .error {
-      color: red;
-      font-size: 12px;
-    }
+  }
+
+  a {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #bbbbbb;
+    font-size: 0.9rem;
+    transition: .3s;
+    margin-top: 30px;
+  }
+
+  a:hover {
+    color: #38d39f;
   }
 }

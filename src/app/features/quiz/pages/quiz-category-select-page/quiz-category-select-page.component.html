@@ -1,11 +1,20 @@
+<app-header></app-header>
+<div class="categories-area">
+  <div class="categories-infos">
+    <P><span style="color:rgb(255, 104, 104);">Atenção!</span> Ao selecionar uma categria vc receberá 5 questões para responder
+      e terá 60 segundos para responder cada questão. Boa sorte!
+    </P>
 
-<P>Olá {{user.name}}! Ao selecionar uma categria vc receberá 5 questões para responder
-  e terá 60 segundos para responder cada questão. Boa sorte!
-</P>
-
-<h1>Selecione uma categoria:</h1>
-<ul>
-  <li *ngFor="let category of categories">
-    <button [routerLink]="['/categories', category.id]">{{ category.name}}</button>
-  </li>
-</ul>
+    <div class="categories">
+      <div class="cat-infos">
+        <h1>Selecione uma categoria:</h1>
+        <div class="navigation">
+          <button *ngFor="let category of categories" [routerLink]="['/categories', category.id]">
+            <img [src]="'./assets/images/' + category.imagePath" alt="Categoria" />
+            <p>{{ category.name }}</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,30 +1,25 @@
 <app-header></app-header>
 
-<div class="container">
-  <div class="login-content">
+<div class="area-login">
+  <div class="login">
+    <h1>Bem vindo!</h1>
     <form class="login-form">
-      <h2>Bem vindo!</h2>
-      <div class="form-field one">
-        <div>
-          <mat-icon>person</mat-icon>
-        </div>
-        <div class="field">
-          <h5>Usuário</h5>
-          <input type="email" [(ngModel)]="email" name="email" required>
-        </div>
-      </div>
+      <mat-form-field appearance="fill" [color]="colorControl.value!">
+        <mat-label>Usuário</mat-label>
+        <input matInput type="email" [(ngModel)]="email" name="email" required>
+        <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field>
 
-      <div class="form-field pass">
-        <mat-icon>lock</mat-icon>
-        <div class="field">
-          <h5>Senha</h5>
-          <input type="password" [(ngModel)]="password" name="password" required>
-        </div>
-      </div>
-
-      <p class="error" *ngIf="error">Usuário ou senha inválidos, tente novamente!</p>
-      <a (click)="navigateByUrl('new-user')">Ainda não tem uma conta? Clique aqui!</a>
-      <button class="btn" type="button" (click)="authenticate()">Entrar</button>
+      <mat-form-field appearance="fill" [color]="colorControl.value!">
+        <mat-label>Insira sua senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="password" name="password" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Esconder senha'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="button" (click)="authenticate()">Entrar</button>
     </form>
+    <p class="error" *ngIf="error">Usuário ou senha inválidos, tente novamente!</p>
+    <a (click)="navigateByUrl('new-user')">Ainda não tem uma conta? Clique aqui!</a>
   </div>
 </div>

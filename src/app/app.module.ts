@@ -7,6 +7,8 @@ import { HomeModule } from './features/home/home.module';
 import { LoginModule } from './features/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeModule,
     LoginModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,20 +1,25 @@
 <app-header></app-header>
-<div class="app-info">
-  <h1>Bem vindo!</h1>
-  <p>
-    MJV Academy quiz app. Projeto feito em Angular para colocar em prática os conhecimentos
-    adquiridos no curso de Angular da MJV Technology & Innovation.
-  </p>
-  <button *ngIf="!user" (click)="navigateByUrl('login')">Entrar</button>
-  <button *ngIf="user" (click)="navigateByUrl('categories')">Jogar!</button>
-</div>
-<div class="rules">
-  <h4>Regras:</h4>
-  <ol>
-    <li>Questões corretas dão 10 pontos</li>
-    <li>Questões erradas reduzem 10 pontos</li>
-    <li>Você tem 60 segundos para responder cada questão</li>
-    <li>Refereshing the page will reset the Quiz</li>
-  </ol>
+<div class="home-area">
+  <div class="home">
+    <div class="app-info" *ngIf="!user">
+      <div class="quiz-description">
+        <h1>Bem vindo ao <span style="color: rgb(255, 104, 104);">QuizzApp!</span></h1>
+        <p>
+          MJV Academy quiz app. Projeto feito em Angular para colocar em prática os conhecimentos
+          adquiridos no curso de Angular da MJV Technology & Innovation.
+        </p>
+      </div>
+      <button mat-raised-button color="accent" *ngIf="!user" (click)="navigateByUrl('login')">Entrar</button>
+    </div>
+    <div class="rules" *ngIf="user">
+      <h4>Aqui vão as regras {{user.name}}:</h4>
+      <ol>
+        <li>Questões corretas dão 10 pontos</li>
+        <li>Questões erradas reduzem 10 pontos</li>
+        <li>Você tem 60 segundos para responder cada questão</li>
+      </ol>
+      <button mat-raised-button color="accent" *ngIf="user" (click)="navigateByUrl('categories')">Ver categorias</button>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>

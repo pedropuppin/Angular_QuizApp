@@ -3,6 +3,7 @@
     {
       "id": 1,
       "name": "Angular",
+      "imagePath": "angular-logo.png",
       "questions": [
         {
           "id": 1,
@@ -104,6 +105,7 @@
     {
       "id": 2,
       "name": "TypeScript",
+      "imagePath": "TS-logo.png",
       "questions": [
         {
           "id": 1,
@@ -205,6 +207,7 @@
     {
       "id": 3,
       "name": "RxJS",
+      "imagePath": "rxjs-logo.png",
       "questions": [
         {
           "id": 1,
@@ -302,6 +305,22 @@
           ]
         }
       ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Pedro",
+      "surname": "Puppin",
+      "email": "pedro@gmail.com",
+      "password": "123123"
+    },
+    {
+      "id": 1,
+      "name": "Alan",
+      "surname": "Jhonnes",
+      "email": "alan@gmail.com",
+      "password": "123123"
     }
   ]
 }

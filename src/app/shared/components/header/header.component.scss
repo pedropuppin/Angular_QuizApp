@@ -1,3 +1,32 @@
 .example-spacer {
   flex: 1 1 auto;
 }
+
+mat-toolbar {
+  background-color: #262a38;
+  margin-top: 5px;
+
+  .app-name{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;
+
+    span {
+      margin-left: 10px;
+    }
+
+    mat-icon {
+      transform: scale(2);
+    }
+  }
+
+  button {
+    margin-right: 25px;
+
+    mat-icon {
+      color: whitesmoke;
+      transform: scale(1.8);
+    }
+  }
+}
