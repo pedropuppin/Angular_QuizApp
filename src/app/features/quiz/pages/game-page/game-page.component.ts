@@ -105,6 +105,8 @@ export class GamePageComponent {
     this.isQuizCompleted = false;
     this.points = 0;
     this.currentIndex = 0;
+    this.correctAnswer = 0;
+    this.wrongAnswer = 0;
     this.progressBar = "0";
     this.counter = 60;
   }
