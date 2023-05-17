@@ -9,6 +9,7 @@
       <div class="cat-infos">
         <h1>Selecione uma categoria:</h1>
         <div class="navigation">
+          <mat-spinner *ngIf="loading === true" color="accent"></mat-spinner>
           <button *ngFor="let category of categories" [routerLink]="['/categories', category.id]">
             <img [src]="'./assets/images/' + category.imagePath" alt="Categoria" />
             <p>{{ category.name }}</p>

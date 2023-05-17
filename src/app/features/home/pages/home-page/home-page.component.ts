@@ -12,10 +12,12 @@ export class HomePageComponent {
   ) { }
 
   user?: User;
+  loading: boolean = true;
 
   ngOnInit(): void {
     const userSessionStorage = sessionStorage.getItem('user');
     if(userSessionStorage) this.user = JSON.parse(userSessionStorage);
+    this.loading = false;
   }
 
   navigateByUrl(url: string) {

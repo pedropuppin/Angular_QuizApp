@@ -4,8 +4,6 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatButtonModule } from '@angular/material/button';
 
-
-
 @NgModule({
   declarations: [
     HomePageComponent
@@ -13,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [
     CommonModule,
     SharedModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   exports: [
     HomePageComponent

@@ -15,25 +15,16 @@ export class QuizCategorySelectPageComponent {
     private categoryFacade: CategoriesFacadeService
   ) { }
 
-  //loading$ = this.categoryFacade.loading$;
-  //categories$ = this.categoryFacade.allCategories$;
   categories: Category[] = [];
   user!: User;
+  loading: boolean = true;
 
   ngOnInit(): void {
     this.questionsApi.getCategories().subscribe(categories => {
       this.categories = categories;
+      this.loading = false;
     });
     const userSessionStorage = sessionStorage.getItem('user');
     if(userSessionStorage) this.user = JSON.parse(userSessionStorage);
   }
 }
-
-// const categories = this.categoryFacade.loadCategories();
-// console.log(categories, this.categories$);
-
-// this.categories$.subscribe(categories => {
-//   console.log(categories);
-// });
-// const userSessionStorage = sessionStorage.getItem('user');
-// if (userSessionStorage) this.user = JSON.parse(userSessionStorage);
