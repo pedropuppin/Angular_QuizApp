@@ -1,0 +1,154 @@
+.game-page-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .game-board {
+    background-color: #181a20;
+    border-radius: 30px;
+    width: 80%;
+    height: auto;
+
+    .game-info {
+      .quiz-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px;
+        border-bottom: 1px solid #303030;
+        margin-bottom: 15px;
+
+        h1 {
+          font-size: 30px;
+          color: whitesmoke;
+          margin-top: 10px;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+
+        }
+      }
+
+      .quiz-stats {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 30px;
+
+        .score {
+          h5 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+          }
+        }
+
+        .question-tracker {
+          h5 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            margin-left: 40px;
+          }
+        }
+
+        .timer {
+          display: flex;
+
+          h5 {
+            margin-left: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .select-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+
+      .questions-answers {
+        width: 100%;
+      }
+
+      .navigate {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 30px;
+
+        .btn {
+          background-color: #181a20;
+          border: none;
+          cursor: pointer;
+
+          mat-icon {
+            transform: scale(1.5);
+          }
+
+          &:hover {
+            transform: scale(1.5);
+            transition: transform 0.3s ease-in-out;
+          }
+
+        }
+
+        .exit {
+          mat-icon {
+            color: rgb(255, 87, 87);
+          }
+        }
+      }
+
+    }
+  }
+
+  .results {
+    position: absolute;
+    width: 50%;
+
+    .final-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #181a20;
+      border-radius: 30px;
+      padding: 30px;
+      height: auto;
+      border: 1px solid #adffe4;
+
+      .results-infos {
+        text-align: center;
+        margin: 20px;
+
+        h3 {
+          font-family: 'Poppins', sans-serif;
+          font-size: 25px;
+          margin-bottom: 30px;
+        }
+
+        p {
+          font-family: 'Poppins', sans-serif;
+          font-size: 15px;
+        }
+      }
+
+      .navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

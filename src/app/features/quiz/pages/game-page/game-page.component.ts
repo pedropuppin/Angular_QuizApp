@@ -61,10 +61,13 @@ export class GamePageComponent {
     this.timer$.pipe(takeWhile(() => this.counter > 0))
     .subscribe(() => {
       this.counter--;
-      if (this.counter === 0) {
+      if (this.counter === 0 && this.isQuizCompleted === false) {
         this.currentIndex++;
         this.counter = 60;
         this.points -= 10;
+      } else if (this.currentIndex === this.randomQuestions!.length) {
+        this.isQuizCompleted = true;
+        return;
       }
     });
     setTimeout(() => {
@@ -77,12 +80,12 @@ export class GamePageComponent {
       this.points += 10;
       this.correctAnswer++;
     } else {
-      if(this.points > 0) this.points -= 10;
+      this.points -= 10;
       this.wrongAnswer++;
     }
     setTimeout(() => {
       this.nextQuestion();
-    }, 500);
+    }, 300);
   }
 
   nextQuestion(): void {
@@ -94,11 +97,6 @@ export class GamePageComponent {
       this.currentIndex++;
       this.progressBar = ((this.currentIndex / this.randomQuestions!.length) * 100).toString();
     }
-    this.counter = 60;
-  }
-
-  previousQuestion(): void {
-    this.currentIndex--;
     this.counter = 60;
   }
 

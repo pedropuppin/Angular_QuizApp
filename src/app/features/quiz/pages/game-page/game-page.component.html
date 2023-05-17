@@ -1,58 +1,69 @@
-<div class="game-page" *ngIf="category">
-  <ng-container *ngIf="!isQuizCompleted">
-    <h1>{{category.name}}</h1>
-    <div class="game-info">
+<app-header></app-header>
+<div class="game-page-area" *ngIf="category">
+  <div class="game-board">
+    <ng-container *ngIf="!isQuizCompleted">
+      <div class="game-info">
+        <div class="quiz-header">
+          <img [src]="'./assets/images/' + category.imagePath" alt="Categoria" />
+          <h1>{{category.name}} Quiz</h1>
+        </div>
+        <div class="quiz-stats">
+          <div class="score">
+            <h5>{{points}} Pontos</h5>
+          </div>
 
-      <div class="score">
-        <h5>{{points}} Pontos</h5>
+          <div class="question-tracker">
+            <h5 *ngIf="randomQuestions">Questão {{currentIndex + 1}} de {{randomQuestions.length}}</h5>
+          </div>
+
+          <div class="timer">
+            <mat-icon>schedule</mat-icon>
+            <h5>{{counter}} segundos restantes</h5>
+          </div>
+        </div>
+        <mat-progress-bar mode="determinate" [value]= "progressBar" color="accent"></mat-progress-bar>
       </div>
 
-      <div class="remaining-questions">
-        <span *ngIf="randomQuestions">Questão {{currentIndex + 1}} de {{randomQuestions.length}}</span>
+      <div class="select-actions">
+        <div class="questions-answers">
+          <app-quiz-game-board
+            *ngIf="randomQuestions"
+            (answerSelected)="onSelectedChanged($event)"
+            [question]="randomQuestions[currentIndex]"
+            [answers]="randomQuestions[currentIndex].answers">
+          </app-quiz-game-board>
+        </div>
+
+        <div class="navigate">
+          <button class="btn refresh" (click)="restartQuiz()">
+            <mat-icon>autorenew</mat-icon>
+          </button>
+          <button class="btn exit" (click)="exit()">
+            <mat-icon>close</mat-icon>
+          </button>
+          <button class="btn next"(click)="nextQuestion()">
+            <mat-icon>arrow_forward_ios</mat-icon>
+          </button>
+        </div>
       </div>
+    </ng-container>
+  </div>
 
-      <div class="timer">
-        <h5><mat-icon>schedule</mat-icon> {{counter}} segundos restantes</h5>
+  <div class="results">
+    <ng-container *ngIf="randomQuestions && isQuizCompleted">
+      <div class="final-card">
+        <div class="results-infos">
+          <h3>Parabéns! Você completou o quiz! <br> Seus resultados foram:</h3>
+          <p>Total de questões: {{randomQuestions.length}}</p>
+          <p>Total de respostas corretas: {{correctAnswer}}</p>
+          <p>Total de respostas erradas: {{wrongAnswer}}</p>
+          <p>Pontuação final: {{points}} pontos</p>
+        </div>
+        <div class="navigation">
+          <button mat-raised-button color="accent" (click)="exit()">Categorias</button>
+          <button mat-raised-button color="accent" (click)="restartQuiz()">Jogar novamente!</button>
+        </div>
       </div>
-
-      <mat-progress-bar mode="determinate" [value]= "progressBar" color="accent"></mat-progress-bar>
-    </div>
-
-    <div class="game-board">
-      <app-quiz-game-board
-        *ngIf="randomQuestions"
-        (answerSelected)="onSelectedChanged($event)"
-        [question]="randomQuestions[currentIndex]"
-        [answers]="randomQuestions[currentIndex].answers">
-      </app-quiz-game-board>
-    </div>
-
-    <div class="navigate">
-      <button (click)="previousQuestion()" [disabled]="currentIndex === 0">
-        <mat-icon>arrow_back_ios</mat-icon>
-      </button>
-      <button (click)="exit()">
-        <mat-icon>close</mat-icon>
-      </button>
-      <button (click)="nextQuestion()">
-        <mat-icon>arrow_forward_ios</mat-icon>
-      </button>
-    </div>
-  </ng-container>
-
-  <ng-container *ngIf="randomQuestions && isQuizCompleted">
-    <div class="final-card">
-      <div class="results">
-        <h3>Parabéns! Você completou o quiz! <br> Seus resultados foram:</h3>
-        <p>Total de questões: {{randomQuestions.length}}</p>
-        <p>Total de respostas corretas: {{correctAnswer}}</p>
-        <p>Total de respostas erradas: {{wrongAnswer}}</p>
-        <p>Pontuação final: {{points}} pontos</p>
-      </div>
-      <div class="navigation">
-        <button (click)="exit()">Categorias</button>
-        <button (click)="restartQuiz()">Jogar novamente!</button>
-      </div>
-    </div>
-  </ng-container>
+    </ng-container>
+  </div>
 </div>
