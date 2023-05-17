@@ -1,1 +1,6 @@
-<button (click)="onSelected()">{{answer.answer}}</button>
+<button class="answer"
+        (click)="onSelected()"
+        [ngClass]="{'correct': answer.isCorrect === true && isSelected,
+        'incorrect': answer.isCorrect === undefined && isSelected}">
+  {{answer.answer}}
+</button>

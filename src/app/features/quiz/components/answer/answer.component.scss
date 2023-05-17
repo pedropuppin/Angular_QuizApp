@@ -1,4 +1,4 @@
-button {
+.answer {
   width: 100%;
   background-color: #262A38;
   border: 1px solid #494949;
@@ -9,7 +9,17 @@ button {
   transition: .3s ease-in-out;
 }
 
-button:hover {
+.answer:hover {
   background-color: #313338;
   border: 1px solid #adffe4;
+}
+
+.correct {
+  background-color: #38d39f !important;
+  border: 1px solid #edfff9 !important;
+}
+
+.incorrect {
+  background-color: #ff5757 !important;
+  border: 1px solid #ffb4b4 !important;
 }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { QuestionsApiService } from 'src/app/shared/services/core/async/questions-api.service';
+import { CategoriesFacadeService } from 'src/app/shared/services/facade/categories-facade.service';
 import { Category } from 'src/app/shared/types/category.model';
 import { User } from 'src/app/shared/types/user.model';
 
@@ -11,12 +12,15 @@ export class QuizCategorySelectPageComponent {
 
   constructor(
     private questionsApi: QuestionsApiService,
+    private categoryFacade: CategoriesFacadeService
   ) { }
 
+  //loading$ = this.categoryFacade.loading$;
+  //categories$ = this.categoryFacade.allCategories$;
   categories: Category[] = [];
   user!: User;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.questionsApi.getCategories().subscribe(categories => {
       this.categories = categories;
     });
@@ -24,3 +28,12 @@ export class QuizCategorySelectPageComponent {
     if(userSessionStorage) this.user = JSON.parse(userSessionStorage);
   }
 }
+
+// const categories = this.categoryFacade.loadCategories();
+// console.log(categories, this.categories$);
+
+// this.categories$.subscribe(categories => {
+//   console.log(categories);
+// });
+// const userSessionStorage = sessionStorage.getItem('user');
+// if (userSessionStorage) this.user = JSON.parse(userSessionStorage);

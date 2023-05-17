@@ -8,11 +8,13 @@
           MJV Academy quiz app. Projeto feito em Angular para colocar em prática os conhecimentos
           adquiridos no curso de Angular da MJV Technology & Innovation.
         </p>
+        <button mat-raised-button color="accent" *ngIf="!user" (click)="navigateByUrl('login')">Entrar</button>
       </div>
-      <button mat-raised-button color="accent" *ngIf="!user" (click)="navigateByUrl('login')">Entrar</button>
+      <img src="./assets/images/quiz-logo.svg" alt="quiz logo">
     </div>
+
     <div class="rules" *ngIf="user">
-      <h4>Aqui vão as regras {{user.name}}:</h4>
+      <h4>Aqui vão as regras {{user.name | titlecase}}:</h4>
       <ol>
         <li>Questões corretas dão 10 pontos</li>
         <li>Questões erradas reduzem 10 pontos</li>

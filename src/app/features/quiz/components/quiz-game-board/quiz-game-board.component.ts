@@ -7,6 +7,7 @@ import { Answer, Question } from 'src/app/shared/types/category.model';
   styleUrls: ['./quiz-game-board.component.scss']
 })
 export class QuizGameBoardComponent {
+  
   @Input()
   question!: Question;
 
@@ -16,7 +17,7 @@ export class QuizGameBoardComponent {
   @Output()
   answerSelected = new EventEmitter<Answer>();
 
-  onTodoSelected(answer: Answer) {
+  onAnswerSelected(answer: Answer) {
     this.answerSelected.emit(answer);
   }
 }

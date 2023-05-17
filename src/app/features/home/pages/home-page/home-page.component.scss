@@ -6,6 +6,16 @@
   height: 100vh;
 
   .app-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 70px;
+
+    img {
+      width: 30%;
+      height: auto;
+      margin-right: 50px;
+    }
 
     .quiz-description {
       width: 55%;

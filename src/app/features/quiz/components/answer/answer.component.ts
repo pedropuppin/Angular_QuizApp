@@ -7,6 +7,9 @@ import { Answer } from 'src/app/shared/types/category.model';
   styleUrls: ['./answer.component.scss']
 })
 export class AnswerComponent {
+
+  isSelected = false;
+
   @Input()
   answer!: Answer;
 
@@ -14,8 +17,7 @@ export class AnswerComponent {
   selected = new EventEmitter<Answer>();
 
   onSelected() {
+    this.isSelected = true
     this.selected.emit(this.answer);
-    console.log(this.answer);
-    
   }
 }

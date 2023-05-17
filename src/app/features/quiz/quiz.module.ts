@@ -12,9 +12,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button';
 
-import { ChangeBgDirective } from 'src/app/shared/directives/change-bg.directive';
-
-
 @NgModule({
   declarations: [
     QuizCategorySelectPageComponent,

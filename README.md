@@ -11,3 +11,11 @@
 - Test acc info
     login: `pedro@gmail.com`
     senha: `123123`
+
+
+# O que falta fazer
+
+* Arrumar o formulário de criação de usuário
+  - o post request não está funcionando
+
+* Implementar o state-services e o facade-service

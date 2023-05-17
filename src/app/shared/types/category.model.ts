@@ -16,7 +16,12 @@ export interface Answer {
   isCorrect?: boolean;
 }
 
-export interface QuestionsState {
+export interface CategoryState {
   loading: boolean;
-  questions: Question | null;
+  category: Category | null;
+}
+
+export interface QuestionState {
+  loading: boolean;
+  question: Question | null;
 }

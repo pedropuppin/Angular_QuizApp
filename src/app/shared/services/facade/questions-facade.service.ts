@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { QuestionsApiService } from '../core/async/questions-api.service';
 import { QuestionsStateService } from '../core/state/questions-state.service';
-import { QuestionsState } from '../../types/category.model';
-import { Observable, distinctUntilChanged, map, mergeMap, shareReplay, take, tap } from 'rxjs';
+import { distinctUntilChanged, map, shareReplay, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

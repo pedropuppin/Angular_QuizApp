@@ -29,11 +29,11 @@
           "questionText": "Qual é a diferença entre paramMap e queryParamMap na classe ActivatedRoute?",
           "answers": [
             {
-              "answer": "O paramMap é um Observable que contém os valores dos parâmetros que fazem parte do caminho da URL da rota. O queryParamMap é um método que recebe um array de chaves e é usado para encontrar parâmetros específicos no paramMap."
-            },
-            {
               "answer": "Ambos são Observables que contêm valores da string da URL da rota solicitada. O paramMap contém os valores dos parâmetros presentes no caminho da URL, enquanto o queryParamMap contém os parâmetros de consulta da URL",
               "isCorrect": true
+            },
+            {
+              "answer": "O paramMap é um Observable que contém os valores dos parâmetros que fazem parte do caminho da URL da rota. O queryParamMap é um método que recebe um array de chaves e é usado para encontrar parâmetros específicos no paramMap."
             },
             {
               "answer": "paramMap é o nome antigo usado no Angular 3. O novo nome é queryParamMap."
@@ -51,11 +51,11 @@
               "answer": "Registrar quaisquer provedores que você pretende usar nos componentes roteados."
             },
             {
-              "answer": "Registrar definições de rotas no nível raiz da aplicação.",
-              "isCorrect": true
+              "answer": "Indicar que o Angular deve incentivar suas rotas a terem sucesso."
             },
             {
-              "answer": "Indicar que o Angular deve incentivar suas rotas a terem sucesso."
+              "answer": "Registrar definições de rotas no nível raiz da aplicação.",
+              "isCorrect": true
             },
             {
               "answer": "Declarar que você pretende usar o roteamento apenas no nível raiz."
@@ -70,14 +70,14 @@
               "answer": "viewEncapsulation e viewEncapsulationFiles."
             },
             {
-              "answer": "styles e styleUrls.",
-              "isCorrect": true
-            },
-            {
               "answer": "Existe apenas uma propriedade e é chamada de css."
             },
             {
               "answer": "css e cssUrl."
+            },
+            {
+              "answer": "styles e styleUrls.",
+              "isCorrect": true
             }
           ]
         },
@@ -86,17 +86,112 @@
           "questionText": "Qual diretiva é usada para vincular uma tag <a> à navegação por rotas?",
           "answers": [
             {
-              "answer": "routeTo"
-            },
-            {
               "answer": "routerLink",
               "isCorrect": true
+            },
+            {
+              "answer": "routeTo"
             },
             {
               "answer": "routePath"
             },
             {
               "answer": "appLink"
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "questionText": "O que são os lifecycle hooks do Angular?",
+          "answers": [
+            {
+              "answer": "Registradores para acompanhar a saúde de um aplicativo Angular."
+            },
+            {
+              "answer": "Provedores que podem ser usados para rastrear as instâncias de componentes."
+            },
+            {
+              "answer": "Métodos reservados com nomes específicos para componentes e diretivas que o Angular chamará em momentos definidos durante a execução, e que podem ser usados para acessar esses momentos do ciclo de vida.",
+              "isCorrect": true
+            },
+            {
+              "answer": "appLink"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "questionText": "Como você configuraria uma definição de rota para um UserDetailComponent que suporta o caminho de URL user/23 (onde 23 representa o ID do usuário solicitado)?",
+          "answers": [
+            {
+              "answer": "{ path: 'user/:id', component: UserDetailComponent }",
+              "isCorrect": true
+            },
+            {
+              "answer": "{ url: 'user/:id', routedComponent: UserDetailComponent }"
+            },
+            {
+              "answer": "{ routedPath: 'user/:id', component: UserDetailComponent }"
+            },
+            {
+              "answer": "{ destination: new UserDetailComponent(), route: 'user/:id' }"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "questionText": "Em formulários reativos, qual tipo de classe de formulário do Angular é usado no elemento DOM nativo para conectá-lo?",
+          "answers": [
+            {
+              "answer": "FormArray"
+            },
+            {
+              "answer": "FormControl"
+            },
+            {
+              "answer": "FormGroup",
+              "isCorrect": true
+            },
+            {
+              "answer": "Todas as anteriores"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "questionText": "Qual é a diferença principal entre um componente e uma diretiva?",
+          "answers": [
+            {
+              "answer": "Um componente possui um template e uma diretiva não."
+            },
+            {
+              "answer": "Um componente possui um template, enquanto uma diretiva não possui.",
+              "isCorrect": true
+            },
+            {
+              "answer": "Uma diretiva pode ser usada para adicionar eventos personalizados ao DOM, enquanto um componente não pode."
+            },
+            {
+              "answer": "Uma diretiva pode direcionar apenas elementos DOM nativos."
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "questionText": "Qual gancho de ciclo de vida pode ser usado em um componente para monitorar todas as alterações nos valores @Input desse componente?",
+          "answers": [
+            {
+              "answer": "ngOnInit"
+            },
+            {
+              "answer": "ngChanges"
+            },
+            {
+              "answer": "ngAfterInputChange"
+            },
+            {
+              "answer": "ngOnChanges",
+              "isCorrect": true
             }
           ]
         }
@@ -109,96 +204,179 @@
       "questions": [
         {
           "id": 1,
-          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "questionText": "Qual dos seguintes nomes de arquivo é a extensão para TypeScript?",
           "answers": [
             {
-              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
+              "answer": ".tt"
             },
             {
-              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "answer": ".ts",
               "isCorrect": true
             },
             {
-              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
+              "answer": ".nod"
             },
             {
-              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
+              "answer": ".txt"
             }
           ]
         },
         {
           "id": 2,
-          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "questionText": "Qual das seguintes linguagens de programação para computador influenciou a criação do TypeScript?",
           "answers": [
             {
-              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
-            },
-            {
-              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "answer": "JavaScript",
               "isCorrect": true
             },
             {
-              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
+              "answer": "Java"
             },
             {
-              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
+              "answer": "C#"
+            },
+            {
+              "answer": "All of the above"
             }
           ]
         },
         {
           "id": 3,
-          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "questionText": "Qual é o tipo herdado para a variável exemplo em 'const example = ['Dylan']'?",
           "answers": [
             {
-              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
+              "answer": "any[]"
             },
             {
-              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "answer": "unknown[]"
+            },
+            {
+              "answer": "string[]",
               "isCorrect": true
             },
             {
-              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
-            },
-            {
-              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
+              "answer": "string"
             }
           ]
         },
         {
           "id": 4,
-          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "questionText": "O que o modificador de acesso 'readonly' faz em uma atribuição de variável de array como: 'const codeNames: readonly string[] = ['Coding', 'God']'?",
           "answers": [
             {
-              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
+              "answer": "Torna possível ler para um código mais limpo."
             },
             {
-              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "answer": "Permite apenas adicionar, mas não excluir elementos no array."
+            },
+            {
+              "answer": "Torna-o privado e pode ser usado apenas no arquivo em que é criado."
+            },
+            {
+              "answer": "Não permite alterações e está lá apenas para leitura, sem modificação.",
               "isCorrect": true
-            },
-            {
-              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
-            },
-            {
-              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
             }
           ]
         },
         {
           "id": 5,
-          "questionText": "Qual método é usado para conectar um FormControl a um elemento de input nativo do DOM em formulários reativos?",
+          "questionText": "O TypeScript sempre inferirá corretamente o tipo de um array.",
           "answers": [
             {
-              "answer": "Adicionar o nome da string atribuída ao FormControl a um atributo chamado controls no elemento para indicar quais campos ele deve incluir."
+              "answer": "Verdadeiro"
             },
             {
-              "answer": "Usar a diretiva formControlName e definir o valor como o nome da string atribuída ao FormControl.",
+              "answer": "falso",
+              "isCorrect": true
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "questionText": "Uma Tupla e um Array são a mesma coisa quando se discute tipos.",
+          "answers": [
+            {
+              "answer": "falso",
               "isCorrect": true
             },
             {
-              "answer": "Usar a sintaxe de binding de colchetes ao redor do atributo de valor no elemento DOM e definir isso como uma instância do FormControl."
+              "answer": "Verdadeiro"
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "questionText": "Quais são os dois tipos de Enums",
+          "answers": [
+            {
+              "answer": "String e Boolean"
             },
             {
-              "answer": "Usar o nome da string atribuída ao FormControl como valor para o atributo de id do elemento DOM."
+              "answer": "String e Number",
+              "isCorrect": true
+            },
+            {
+              "answer": "Number e Boolean"
+            },
+            {
+              "answer": "Number e Number Array"
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "questionText": "_______ é um tipo de retorno pra quando nada é retornado.",
+          "answers": [
+            {
+              "answer": "void",
+              "isCorrect": true
+            },
+            {
+              "answer": "any"
+            },
+            {
+              "answer": "any[]"
+            },
+            {
+              "answer": "unknown"
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "questionText": "Quando uma classe extende outra classe e substitui os membros da classe pai, isso é chamado de ________.",
+          "answers": [
+            {
+              "answer": "Overload"
+            },
+            {
+              "answer": "Inheriting"
+            },
+            {
+              "answer": "Extending"
+            },
+            {
+              "answer": "Override",
+              "isCorrect": true
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "questionText": "Qual é a diferença entre interface e type no TypeScript?",
+          "answers": [
+            {
+              "answer": "Interface é usada apenas para objetos, enquanto type pode ser usado para qualquer tipo de dado."
+            },
+            {
+              "answer": "Interface é uma definição mais flexível que pode ser modificada posteriormente, enquanto type é uma definição mais rígida e imutável",
+              "isCorrect": true
+            },
+            {
+              "answer": "Interface é uma abstração de alto nível que encapsula a estrutura e o comportamento dos objetos, enquanto type é uma forma de definir tipos de dados específicos."
+            },
+            {
+              "answer": "Não há diferença significativa entre interface e type, pois ambos podem ser usados de forma intercambiável."
             }
           ]
         }
@@ -230,77 +408,172 @@
         },
         {
           "id": 2,
-          "questionText": "O que significa RxJS?",
+          "questionText": "O que é um Observable?",
           "answers": [
             {
-              "answer": "Reactive Extensions for JavaScript",
+              "answer": "Um operador de filtragem de dados."
+            },
+            {
+              "answer": "Uma função pura que transforma valores."
+            },
+            {
+              "answer": " Uma coleção de dados assíncronos ao longo do tempo.",
               "isCorrect": true
             },
             {
-              "answer": "Random Extensions for JavaScript"
-            },
-            {
-              "answer": "Real-time Extensions for JavaScript"
-            },
-            {
-              "answer": "Regular Expressions for JavaScript"
+              "answer": " Uma classe para manipular eventos do DOM."
             }
           ]
         },
         {
           "id": 3,
-          "questionText": "O que significa RxJS?",
+          "questionText": "Qual operador é usado para realizar uma busca em um fluxo de dados observável?",
           "answers": [
             {
-              "answer": "Reactive Extensions for JavaScript",
+              "answer": "map"
+            },
+            {
+              "answer": "filter",
               "isCorrect": true
             },
             {
-              "answer": "Random Extensions for JavaScript"
+              "answer": "debounceTime"
             },
             {
-              "answer": "Real-time Extensions for JavaScript"
-            },
-            {
-              "answer": "Regular Expressions for JavaScript"
+              "answer": "switchMap"
             }
           ]
         },
         {
           "id": 4,
-          "questionText": "O que significa RxJS?",
+          "questionText": "O que é um operador",
           "answers": [
             {
-              "answer": "Reactive Extensions for JavaScript",
+              "answer": "Uma função que processa eventos do DOM."
+            },
+            {
+              "answer": "Uma classe para definir modelos de dados."
+            },
+            {
+              "answer": "Um objeto para realizar chamadas HTTP."
+            },
+            {
+              "answer": "Uma função que transforma um Observable em outro Observable.",
               "isCorrect": true
-            },
-            {
-              "answer": "Random Extensions for JavaScript"
-            },
-            {
-              "answer": "Real-time Extensions for JavaScript"
-            },
-            {
-              "answer": "Regular Expressions for JavaScript"
             }
           ]
         },
         {
           "id": 5,
-          "questionText": "O que significa RxJS?",
+          "questionText": "O que é um Subject?",
           "answers": [
             {
-              "answer": "Reactive Extensions for JavaScript",
+              "answer": "Um operador que combina múltiplos Observables em um."
+            },
+            {
+              "answer": "Um objeto que emite valores para múltiplos Observers.",
               "isCorrect": true
             },
             {
-              "answer": "Random Extensions for JavaScript"
+              "answer": " Uma classe para manipular eventos de clique em botões."
             },
             {
-              "answer": "Real-time Extensions for JavaScript"
+              "answer": "Um operador que agrupa valores em um único resultado."
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "questionText": "O que é um operador de mapeamento no RxJs?",
+          "answers": [
+            {
+              "answer": "Um operador que combina múltiplos Observables em um."
             },
             {
-              "answer": "Regular Expressions for JavaScript"
+              "answer": "Um objeto para realizar chamadas HTTP assíncronas."
+            },
+            {
+              "answer": "Uma função para transformar valores de um Observable.",
+              "isCorrect": true
+            },
+            {
+              "answer": "Um operador que agrupa os valores de um Observable em um único resultado."
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "questionText": "O que é um operador de transformação em cadeia (chaining operator) no RxJs?",
+          "answers": [
+            {
+              "answer": "Um operador que permite encadear múltiplos operadores em um único fluxo de ",
+              "isCorrect": true
+            },
+            {
+              "answer": "Um operador que combina múltiplos fluxos de dados em um único fluxo."
+            },
+            {
+              "answer": "Um operador que altera o tipo de dado emitido pelo observável.Um operador que inverte a ordem dos valores emitidos pelo fluxo de dados."
+            },
+            {
+              "answer": "Um operador que inverte a ordem dos valores emitidos pelo fluxo de dados."
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "questionText": "Qual operador do RxJs é usado para combinar os últimos valores de dois fluxos de dados observáveis?",
+          "answers": [
+            {
+              "answer": "concat"
+            },
+            {
+              "answer": "merge"
+            },
+            {
+              "answer": "zip"
+            },
+            {
+              "answer": "combineLatest",
+              "isCorrect": true
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "questionText": "Qual operador do RxJs é usado para transformar cada valor de um fluxo de dados observável em um novo valor?",
+          "answers": [
+            {
+              "answer": "reduce"
+            },
+            {
+              "answer": "pluck"
+            },
+            {
+              "answer": "map",
+              "isCorrect": true
+            },
+            {
+              "answer": "scan"
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "questionText": "Qual operador do RxJs é usado para transformar um fluxo de dados observável em um único valor agregado?",
+          "answers": [
+            {
+              "answer": "toArray"
+            },
+            {
+              "answer": "reduce",
+              "isCorrect": true
+            },
+            {
+              "answer": "mergeAll"
+            },
+            {
+              "answer": "concatAll"
             }
           ]
         }

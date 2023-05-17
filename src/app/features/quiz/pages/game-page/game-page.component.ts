@@ -80,7 +80,7 @@ export class GamePageComponent {
       this.points += 10;
       this.correctAnswer++;
     } else {
-      this.points -= 10;
+      this.points -= 5;
       this.wrongAnswer++;
     }
     setTimeout(() => {
