@@ -20,14 +20,14 @@ export class CreateUserPageComponent {
   colorControl = new FormControl('accent' as ThemePalette);
 
   newUserForm = new FormGroup({
-    name: new FormControl<string | null>('', [Validators.required]),
-    surname: new FormControl<string | null>('', [Validators.required]),
-    email: new FormControl<string | null>('', [Validators.required]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+    name: new FormControl<string | null>(null, [Validators.required]),
+    surname: new FormControl<string | null>(null, [Validators.required]),
+    email: new FormControl<string | null>(null, [Validators.required, Validators.email]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
   });
 
   onSubmit() {
-    const formValue: any = this.newUserForm.value
+    const formValue = this.newUserForm.getRawValue();
     console.log(formValue);
     this.usersService.createUser(formValue);
     this.router.navigateByUrl('categories')

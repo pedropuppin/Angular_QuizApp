@@ -21,6 +21,12 @@
         <mat-label>Email</mat-label>
         <input matInput type="email" placeholder="ex: test@gmail.com" formControlName="email">
         <mat-icon matSuffix>mail</mat-icon>
+        <mat-error *ngIf="newUserForm.value.email && newUserForm.controls.email.errors">
+          Insira um email válido
+        </mat-error>
+        <mat-error *ngIf="newUserForm.value.email === null">
+          O email é <strong>obrigatório</strong>
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill" [color]="colorControl.value!">
@@ -29,9 +35,12 @@
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Esconder senha'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
+        <mat-error *ngIf="newUserForm.controls.password.errors">
+          A senha deve ter no mínimo 6 caracteres
+        </mat-error>
       </mat-form-field>
 
-      <button mat-raised-button color="accent" type="submit" (click)="onSubmit()" [disabled]="newUserForm.invalid === true">Salvar</button>
+      <button mat-raised-button color="accent" type="submit" (click)="onSubmit()" [disabled]="newUserForm.invalid">Salvar</button>
     </form>
   </div>
 </div>
