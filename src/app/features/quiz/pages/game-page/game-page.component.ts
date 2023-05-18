@@ -38,6 +38,8 @@ export class GamePageComponent {
       this.randomQuestions = this.getRandomQuestions(5);
     });
     this.startCounter();
+    console.log(this.activateRoute.params);
+
   }
 
   getRandomQuestions(numQuestions: number): Question[] {
@@ -80,7 +82,7 @@ export class GamePageComponent {
       this.points += 10;
       this.correctAnswer++;
     } else {
-      this.points -= 5;
+      this.points -= 10;
       this.wrongAnswer++;
     }
     setTimeout(() => {
