@@ -30,7 +30,7 @@ export class CreateUserPageComponent {
     const formValue: any = this.newUserForm.getRawValue();
     this.usersService.createUser(formValue).subscribe(
       res => {
-        console.log('Usuário criado com sucesso:', res);
+        // console.log('Usuário criado com sucesso:', res);
         this.router.navigateByUrl('login');
       }
     );

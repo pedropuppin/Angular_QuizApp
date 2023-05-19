@@ -32,14 +32,14 @@ export class LoginPageComponent {
           const user = JSON.parse(JSON.stringify(response[0]));
           sessionStorage.setItem('user', JSON.stringify(user));
           this.router.navigateByUrl('home');
-          console.log('Autenticação bem-sucedida:', response);
+          // console.log('Autenticação bem-sucedida:', response);
         } else {
+          // console.error('Falha na autenticação: Usuário não encontrado');
           this.error = true;
-          console.error('Falha na autenticação: Usuário não encontrado');
         }
       },
       error => {
-        console.error('Falha na autenticação:', error);
+        // console.error('Falha na autenticação:', error);
         this.router.navigateByUrl('login');
       }
     )
