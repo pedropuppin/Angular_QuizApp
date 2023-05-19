@@ -583,16 +583,9 @@
   "users": [
     {
       "id": 1,
-      "name": "Pedro",
-      "surname": "Puppin",
-      "email": "pedro@gmail.com",
-      "password": "123123"
-    },
-    {
-      "id": 1,
-      "name": "Alan",
-      "surname": "Jhonnes",
-      "email": "alan@gmail.com",
+      "name": "Random",
+      "surname": "User",
+      "email": "visit@gmail.com",
       "password": "123123"
     }
   ]

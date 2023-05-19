@@ -1,11 +1,12 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable, finalize } from 'rxjs';
 import { QuestionsApiService } from 'src/app/shared/services/core/async/questions-api.service';
 import { Category } from 'src/app/shared/types/category.model';
 
 @Component({
   templateUrl: './quiz-category-select-page.component.html',
-  styleUrls: ['./quiz-category-select-page.component.scss']
+  styleUrls: ['./quiz-category-select-page.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class QuizCategorySelectPageComponent {
 

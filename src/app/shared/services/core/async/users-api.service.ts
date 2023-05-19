@@ -9,18 +9,18 @@ import { environment } from 'src/enviroments/enviroments';
 })
 export class UsersApiService {
 
-  constructor(
-    private http: HttpClient
-  ) { }
-
-  options = {
+  private readonly apiPath = `${environment.apiPath}/users`;
+  private readonly options = {
     headers: {
       'Content-Type': 'application/json'
     }
   };
 
-  readonly apiPath = `${environment.apiPath}/users`;
+  users: User[] = [];
 
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getUsers() {
     return this.http.get<User[]>(this.apiPath, this.options);
@@ -30,21 +30,11 @@ export class UsersApiService {
     return this.http.get(this.apiPath, { params: { email, password } });
   }
 
-  GetUserbyId(id:any){
+  GetUserbyId(id: number){
     return this.http.get(this.apiPath+`/${id}`, this.options);
   }
 
-  createUser(user: any): Observable<any> {
-    return this.http.post(this.apiPath, user);
+  createUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiPath, user, this.options);
   }
-
-  // create(user: User) {
-  //   // user.id = this.generateNextId();
-  //   // this.users.push(user as User);
-  //   return this.http.post<User>(this.apiPath + '/create/', user, this.options);
-  // }
-
-  // generateNextId() {
-  //   // return this.users[(this.users.length - 1)].id + 1;
-  // }
 }

@@ -27,9 +27,12 @@ export class CreateUserPageComponent {
   });
 
   onSubmit() {
-    const formValue = this.newUserForm.getRawValue();
-    console.log(formValue);
-    this.usersService.createUser(formValue);
-    this.router.navigateByUrl('categories')
+    const formValue: any = this.newUserForm.getRawValue();
+    this.usersService.createUser(formValue).subscribe(
+      res => {
+        console.log('Usuário criado com sucesso:', res);
+        this.router.navigateByUrl('login');
+      }
+    );
   }
 }

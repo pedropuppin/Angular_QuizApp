@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { interval, map, switchMap, takeWhile } from 'rxjs';
+import { Subscription, interval, map, switchMap, takeWhile } from 'rxjs';
 import { QuestionsApiService } from 'src/app/shared/services/core/async/questions-api.service';
 import { Answer, Category, Question } from 'src/app/shared/types/category.model';
 
@@ -10,7 +10,7 @@ import { Answer, Category, Question } from 'src/app/shared/types/category.model'
 })
 export class GamePageComponent {
 
-  category?: Category;
+  category!: Category;
   randomQuestions?: Question[];
   timer$?: any;
   currentIndex: number = 0;
@@ -20,6 +20,7 @@ export class GamePageComponent {
   counter: number = 60;
   progressBar: string = '0%';
   isQuizCompleted: boolean = false;
+  questionsSubscription!: Subscription;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -27,9 +28,8 @@ export class GamePageComponent {
     private router: Router,
   ) {}
 
-  ngOnInit():void {
-    this.activateRoute.params
-    .pipe(
+  ngOnInit(): void {
+    this.questionsSubscription = this.activateRoute.params.pipe(
       map(params => parseInt(params['id'])),
       switchMap(categoryId => this.questionsApi.getCategoryById(categoryId))
     )
@@ -38,7 +38,10 @@ export class GamePageComponent {
       this.randomQuestions = this.getRandomQuestions(5);
     });
     this.startCounter();
-    console.log(this.activateRoute.params);
+  }
+
+  ngOnDestroy(): void {
+    this.questionsSubscription.unsubscribe();
   }
 
   getRandomQuestions(numQuestions: number): Question[] {
