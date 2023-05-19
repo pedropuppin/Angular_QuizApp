@@ -90,6 +90,7 @@
           background-color: #181a20;
           border: none;
           cursor: pointer;
+          transition: .3s ease-in-out;
 
           mat-icon {
             transform: scale(1.5);
@@ -97,7 +98,6 @@
 
           &:hover {
             transform: scale(1.5);
-            transition: .3s ease-in-out;
           }
 
         }
