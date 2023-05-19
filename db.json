@@ -583,8 +583,8 @@
   "users": [
     {
       "id": 1,
-      "name": "Random",
-      "surname": "User",
+      "name": "User",
+      "surname": "One",
       "email": "visit@gmail.com",
       "password": "123123"
     }

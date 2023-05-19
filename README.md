@@ -14,7 +14,7 @@ Angular project developed to put into practice the knowledge acquired during the
 
 #### email:
 ```sh
-  pedro@gmail.com
+  visit@gmail.com
 ```
 
 #### password:
