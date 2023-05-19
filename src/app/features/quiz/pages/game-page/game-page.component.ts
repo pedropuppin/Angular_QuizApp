@@ -39,7 +39,6 @@ export class GamePageComponent {
     });
     this.startCounter();
     console.log(this.activateRoute.params);
-
   }
 
   getRandomQuestions(numQuestions: number): Question[] {
