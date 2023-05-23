@@ -20,6 +20,6 @@
       <button mat-raised-button color="accent" type="button" (click)="authenticate()">Entrar</button>
     </form>
     <p class="error" *ngIf="error">Usuário ou senha inválidos, tente novamente!</p>
-    <a (click)="navigateByUrl('new-user')">Ainda não tem uma conta? Clique aqui!</a>
+    <a [routerLink]="['new-user']">Ainda não tem uma conta? Clique aqui!</a>
   </div>
 </div>
