@@ -2,7 +2,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { Router } from '@angular/router';
-import { UsersApiService } from 'src/app/shared/services/core/async/users-api.service';
+import { skipWhile, take} from 'rxjs';
+import { UserAuthService } from 'src/app/shared/services/facade/user-auth.service';
 
 @Component({
   templateUrl: './login-page.component.html',
@@ -12,7 +13,7 @@ import { UsersApiService } from 'src/app/shared/services/core/async/users-api.se
 export class LoginPageComponent {
 
   constructor (
-    private userService: UsersApiService,
+    public userAuth: UserAuthService,
     private router: Router,
   ) {}
 
@@ -20,25 +21,17 @@ export class LoginPageComponent {
   hide = true;
   email: string = ""
   password: string = ""
-  error = false
 
   authenticate() {
-    this.userService.authenticate(this.email, this.password).subscribe(
-      res => {
-        const response = JSON.parse(JSON.stringify(res));
-        if(response.length > 0) {
-          const user = JSON.parse(JSON.stringify(response[0]));
-          sessionStorage.setItem('user', JSON.stringify(user));
+    this.userAuth.loginUser(this.email, this.password)
+    this.userAuth.isLoggedIn$.pipe(
+      skipWhile(isLoggedIn => !isLoggedIn),
+      take(1)
+    ).subscribe(
+      isLoggedIn => {
+        if(isLoggedIn) {
           this.router.navigateByUrl('home');
-          // console.log('Autenticação bem-sucedida:', response);
-        } else {
-          // console.error('Falha na autenticação: Usuário não encontrado');
-          this.error = true;
         }
-      },
-      error => {
-        // console.error('Falha na autenticação:', error);
-        this.router.navigateByUrl('login');
       }
     )
   }

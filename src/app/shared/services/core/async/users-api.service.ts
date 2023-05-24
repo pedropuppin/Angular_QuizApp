@@ -22,16 +22,16 @@ export class UsersApiService {
     private http: HttpClient
   ) { }
 
-  getUsers() {
+  getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiPath, this.options);
   }
 
-  authenticate(email: string, password: string): Observable<any> {
-    return this.http.get(this.apiPath, { params: { email, password } });
+  getUserByEmailAndPassword(email: string, password: string): Observable<User> {
+    return this.http.get<User>(this.apiPath, { params: { email, password } });
   }
 
-  GetUserbyId(id: number){
-    return this.http.get(this.apiPath+`/${id}`, this.options);
+  GetUserbyId(id: number): Observable<User>{
+    return this.http.get<User>(this.apiPath+`/${id}`, this.options);
   }
 
   createUser(user: User): Observable<User> {

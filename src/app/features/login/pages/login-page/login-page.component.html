@@ -19,7 +19,9 @@
       </mat-form-field>
       <button mat-raised-button color="accent" type="button" (click)="authenticate()">Entrar</button>
     </form>
-    <p class="error" *ngIf="error">Usuário ou senha inválidos, tente novamente!</p>
+    <p class="error" *ngIf="userAuth.hasError$ | async">
+      Usuário ou senha inválidos, tente novamente!
+    </p>
     <a [routerLink]="['new-user']">Ainda não tem uma conta? Clique aqui!</a>
   </div>
 </div>

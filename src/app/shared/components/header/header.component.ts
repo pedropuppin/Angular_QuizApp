@@ -22,7 +22,7 @@ export class HeaderComponent {
   }
 
   exit() {
-    sessionStorage.clear();
+    this.userAuth.logoutUser();
     this.router.navigateByUrl('login');
   }
 }

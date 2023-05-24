@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription, interval, map, switchMap, takeWhile } from 'rxjs';
 import { QuestionsApiService } from 'src/app/shared/services/core/async/questions-api.service';
+import { QuestionsFacadeService } from 'src/app/shared/services/facade/questions-facade.service';
 import { Answer, Category, Question } from 'src/app/shared/types/category.model';
 
 @Component({
@@ -25,6 +26,7 @@ export class GamePageComponent {
   constructor(
     private activateRoute: ActivatedRoute,
     private questionsApi: QuestionsApiService,
+    private questionsFacade: QuestionsFacadeService,
   ) {}
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class GamePageComponent {
       this.category = category
       this.randomQuestions = this.getRandomQuestions(5);
     });
-    this.startCounter();
+    this.startCounter()
   }
 
   ngOnDestroy(): void {

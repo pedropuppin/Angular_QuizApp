@@ -11,13 +11,13 @@ import { Category } from 'src/app/shared/types/category.model';
 export class QuizCategorySelectPageComponent {
 
   categories$: Observable<Category[]>;
-  loading: boolean = true;
+  isLoading: boolean = true;
 
   constructor(
     private questionsApi: QuestionsApiService,
   ) {
     this.categories$ = this.questionsApi.getCategories().pipe(
-      finalize(() => this.loading = false)
+      finalize(() => this.isLoading = false)
     );
   }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { QuestionsApiService } from '../core/async/questions-api.service';
 import { QuestionsStateService } from '../core/state/questions-state.service';
 import { distinctUntilChanged, map, shareReplay, tap } from 'rxjs';
+import { Question } from '../../types/category.model';
 
 @Injectable({
   providedIn: 'root'
