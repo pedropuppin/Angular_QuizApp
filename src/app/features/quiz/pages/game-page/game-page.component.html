@@ -38,7 +38,7 @@
           <button class="btn" (click)="restartQuiz()">
             <mat-icon>autorenew</mat-icon>
           </button>
-          <button class="btn exit" (click)="exit()">
+          <button class="btn exit" [routerLink]="['/categories']">
             <mat-icon>close</mat-icon>
           </button>
           <button class="btn"(click)="nextQuestion()">
@@ -60,7 +60,7 @@
           <p>Pontuação final: {{points}} pontos</p>
         </div>
         <div class="navigation">
-          <button mat-raised-button color="accent" (click)="exit()">Categorias</button>
+          <button mat-raised-button color="accent"  [routerLink]="['/categories']">Categorias</button>
           <button mat-raised-button color="accent" (click)="restartQuiz()">Jogar novamente!</button>
         </div>
       </div>

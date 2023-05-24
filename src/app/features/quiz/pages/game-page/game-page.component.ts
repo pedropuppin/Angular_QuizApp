@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription, interval, map, switchMap, takeWhile } from 'rxjs';
 import { QuestionsApiService } from 'src/app/shared/services/core/async/questions-api.service';
 import { Answer, Category, Question } from 'src/app/shared/types/category.model';
@@ -25,7 +25,6 @@ export class GamePageComponent {
   constructor(
     private activateRoute: ActivatedRoute,
     private questionsApi: QuestionsApiService,
-    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -113,9 +112,5 @@ export class GamePageComponent {
     this.wrongAnswer = 0;
     this.progressBar = "0";
     this.counter = 60;
-  }
-
-  exit(){
-    this.router.navigateByUrl('categories');
   }
 }

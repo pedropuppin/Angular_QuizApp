@@ -2,9 +2,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ThemePalette } from '@angular/material/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { UsersApiService } from 'src/app/shared/services/core/async/users-api.service';
-import { User } from 'src/app/shared/types/user.model';
 
 @Component({
   templateUrl: './login-page.component.html',

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../types/user.model';
+import { UserAuthService } from '../../services/facade/user-auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,18 +11,14 @@ import { User } from '../../types/user.model';
 export class HeaderComponent {
 
   constructor(
+    private userAuth: UserAuthService,
     private router: Router
   ) { }
 
   user?: User;
 
   ngOnInit(): void {
-    const userSessionStorage = sessionStorage.getItem('user');
-    if(userSessionStorage) this.user = JSON.parse(userSessionStorage);
-  }
-
-  navigateByUrl(url: string) {
-    this.router.navigateByUrl(url);
+    this.user = this.userAuth.getUser();
   }
 
   exit() {

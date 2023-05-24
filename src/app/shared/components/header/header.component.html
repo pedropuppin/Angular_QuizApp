@@ -1,20 +1,20 @@
 <mat-toolbar>
   <div class="app-name">
     <mat-icon>fingerprint</mat-icon>
-    <span (click)="navigateByUrl('home')" style="color:rgb(255, 104, 104);">QuizzApp</span>
+    <span [routerLink]="['/home']" style="color:rgb(255, 104, 104);">QuizzApp</span>
   </div>
 
   <span class="example-spacer"></span>
 
-  <button (click)="navigateByUrl('categories')" *ngIf="user" mat-button>
+  <button [routerLink]="['/categories']" *ngIf="user" mat-button>
     <mat-icon>category</mat-icon>
   </button>
 
-  <button (click)="navigateByUrl('home')" mat-button>
+  <button [routerLink]="['/home']" mat-button>
     <mat-icon>home</mat-icon>
   </button>
 
-  <button (click)="navigateByUrl('login')"
+  <button [routerLink]="['/login']"
           mat-raised-button
           color="accent"
           *ngIf="!user">Login</button>

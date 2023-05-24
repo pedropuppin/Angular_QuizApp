@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { UserAuthService } from 'src/app/shared/services/facade/user-auth.service';
 import { User } from 'src/app/shared/types/user.model';
 
 @Component({
@@ -9,19 +9,12 @@ import { User } from 'src/app/shared/types/user.model';
 })
 export class HomePageComponent {
   constructor(
-    private router: Router
+    private userAuth: UserAuthService,
   ) { }
 
   user?: User;
-  loading: boolean = true;
 
   ngOnInit(): void {
-    const userSessionStorage = sessionStorage.getItem('user');
-    if(userSessionStorage) this.user = JSON.parse(userSessionStorage);
-    this.loading = false;
-  }
-
-  navigateByUrl(url: string) {
-    this.router.navigateByUrl(url);
+    this.user = this.userAuth.getUser();
   }
 }

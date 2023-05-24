@@ -6,6 +6,7 @@ import { HomeModule } from './features/home/home.module';
 import { LoginModule } from './features/login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
